@@ -7,6 +7,7 @@ export default function AddTodos({ handleSubmitButton }) {
   return (
     <View style={styles.inputBox}>
       <TextInput
+        value={text}
         placeholder='Add new todo...'
         style={styles.input}
         onChangeText={(val) => setText(val)}
@@ -14,7 +15,10 @@ export default function AddTodos({ handleSubmitButton }) {
       <Button
         title='Add Todo'
         color='purple'
-        onPress={() => handleSubmitButton(text)}
+        onPress={() => {
+          handleSubmitButton(text)
+          setText('')
+        }}
       />
     </View>
   )

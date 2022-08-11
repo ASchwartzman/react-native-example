@@ -39,6 +39,7 @@ export default function App() {
         <View style={styles.content}>
           <AddTodos handleSubmitButton={handleSubmitButton} />
           <FlatList
+            showsVerticalScrollIndicator={false}
             style={styles.list}
             data={todos}
             keyExtractor={(todo) => todo.id}
